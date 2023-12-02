@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+<div class="container">
+    <h1>Quiz App</h1>
+    <div id="quiz" style="display: block">
+        <form action="/submit" method="post">
+            <div class="question">{{.question.Question}}</div>
+            <div class="options">
+                {{range $index, $option := .question.Options}}
+                <label class="option">
+                    <input type="radio" name="quiz" value="{{$index}}">
+                    {{$option}}
+                </label>
+                {{end}}
+            </div>
+            <button type="submit" class="button">Submit</button>
+        </form>
+    </div>
+</div>
+<script src="../assets/script.js"></script>
+</body>
+</html>
